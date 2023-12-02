@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Objects;
+
 public class Topic {
     private String description;
 
@@ -19,5 +21,18 @@ public class Topic {
     public String toString() {
         return "Topic:" +
                 "description='" + description + '\'' ;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Topic topic = (Topic) o;
+        return Objects.equals(description, topic.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(description);
     }
 }

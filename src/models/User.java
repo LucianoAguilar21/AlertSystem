@@ -43,7 +43,9 @@ public class User {
 
     public void addAlert(Alert alert){
         alert.setReceivedAt(LocalDateTime.now());
-        this.alerts.add(alert);
+
+        if(this.getTopics().contains(alert.getTopic())){this.alerts.add(alert);}
+
     }
 
     public List<Alert> getAlertsRead(){
@@ -66,12 +68,12 @@ public class User {
             alert.markAsRead();
     }
 
-    public List<Alert> getUnexpiredAndUnreadAlerts(){
+    public List<Alert> getUnexpired_And_UnreadAlerts(){
         List<Alert> unexpiredAndUnreadAlerts = new ArrayList<Alert>();
         for (Alert alert: this.alerts ) {
-            if(!alert.isExpire() && !alert.isRead() &&  (alert.getType().equals( AlertType.URGENT))){
+            if(!alert.isExpired() && !alert.isRead() &&  (alert.getType().equals( AlertType.URGENT))){
                 unexpiredAndUnreadAlerts.add(0,alert);
-            }else if(!alert.isExpire() && !alert.isRead() &&  (alert.getType().equals( AlertType.INFORMATIVE))){
+            }else if(!alert.isExpired() && !alert.isRead() &&  (alert.getType().equals( AlertType.INFORMATIVE))){
                 unexpiredAndUnreadAlerts.add(alert);
             }
         }
@@ -79,13 +81,13 @@ public class User {
         return unexpiredAndUnreadAlerts;
     }
 
-    public List<Alert> getUnexpiredAlertByTopic(String topicDescription){
+    public List<Alert> getUnexpiredAlert_ByTopic(String topicDescription){
         List<Alert> unexpiredAlertByTopic = new ArrayList<Alert>();
 
         for (Alert alert: this.alerts) {
-            if(alert.getTopic().getDescription().equals(topicDescription) && !alert.isExpire() && (alert.getType().equals( AlertType.URGENT))){
+            if(alert.getTopic().getDescription().equals(topicDescription) && !alert.isExpired() && (alert.getType().equals( AlertType.URGENT))){
                 unexpiredAlertByTopic.add(0,alert);
-            } else if(alert.getTopic().getDescription().equals(topicDescription) && !alert.isExpire() && (alert.getType().equals( AlertType.INFORMATIVE))){
+            } else if(alert.getTopic().getDescription().equals(topicDescription) && !alert.isExpired() && (alert.getType().equals( AlertType.INFORMATIVE))){
                 unexpiredAlertByTopic.add(alert);
             }
         }

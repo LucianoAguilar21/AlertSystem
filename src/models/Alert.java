@@ -1,7 +1,6 @@
 package models;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.Objects;
 
 /** Clase Alert para crear las alertas
@@ -77,7 +76,7 @@ public class Alert implements Cloneable,Comparable<Alert> {
         this.expire = expire;
     }
 
-    public boolean isExpire(){
+    public boolean isExpired(){
         LocalDateTime now = LocalDateTime.now();
         return now.isAfter(this.getExpire());
     }
@@ -88,7 +87,7 @@ public class Alert implements Cloneable,Comparable<Alert> {
                 "description='" + description + '\'' +
                 ", topic=" + topic +
                 ", expire=" + expire +
-                ", isExpire=" + isExpire()+
+                ", isExpire=" + isExpired()+
                 ", type=" + type +
                 ", receivedAt="+receivedAt+
                 '}';

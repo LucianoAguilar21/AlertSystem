@@ -63,7 +63,7 @@ public class AlertSystem {
         alertSystem.getUsers().get(2).addTopic(alertSystem.getTopics().get(3));
 
 
-        LocalDateTime expire = LocalDateTime.parse("2023-12-03 12:00:00", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        LocalDateTime expire = LocalDateTime.parse("2023-12-08 12:00:00", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
         LocalDateTime expired = LocalDateTime.parse("2023-12-01 12:00:00", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 
         Alert alert = new Alert("I1", alertSystem.getTopics().get(0),expire,AlertType.INFORMATIVE);

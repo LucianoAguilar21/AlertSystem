@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51d7789c-bf4b-4a92-8119-6dad5f595276" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AlertSystem.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/AlertSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AlertSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AlertSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Alert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Alert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Topic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Topic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/AlertTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/AlertTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/TopicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/TopicTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/UserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,41 +49,12 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "onboarding.tips.debug.path": "C:/Users/Luciano/IdeaProjects/AlertSystem/src/Main.java"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.UserTest.userRegisterTest">
-    <configuration name="AlertSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.AlertSystem" />
-      <module name="AlertSystem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AlertTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AlertSystem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.AlertTest" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserTest.initialTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.tests in AlertSystem">
+    <configuration name="UserTest.addAlertTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AlertSystem" />
       <extension name="coverage">
         <pattern>
@@ -92,13 +64,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.UserTest" />
-      <option name="METHOD_NAME" value="initialTest" />
+      <option name="METHOD_NAME" value="addAlertTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest.userRegisterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserTest.alertCannotBeAdded" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AlertSystem" />
       <extension name="coverage">
         <pattern>
@@ -108,18 +80,65 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.UserTest" />
-      <option name="METHOD_NAME" value="userRegisterTest" />
+      <option name="METHOD_NAME" value="alertCannotBeAdded" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest.getAlertTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AlertSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.UserTest" />
+      <option name="METHOD_NAME" value="getAlertTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest.getAlertsReadTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AlertSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.UserTest" />
+      <option name="METHOD_NAME" value="getAlertsReadTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tests in AlertSystem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AlertSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserTest.userRegisterTest" />
-        <item itemvalue="Application.AlertSystem" />
-        <item itemvalue="JUnit.UserTest.initialTest" />
-        <item itemvalue="JUnit.AlertTest.test" />
+        <item itemvalue="JUnit.tests in AlertSystem" />
+        <item itemvalue="JUnit.UserTest.alertCannotBeAdded" />
+        <item itemvalue="JUnit.UserTest.getAlertTest" />
+        <item itemvalue="JUnit.UserTest.addAlertTest" />
+        <item itemvalue="JUnit.UserTest.getAlertsReadTest" />
       </list>
     </recent_temporary>
   </component>
