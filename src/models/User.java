@@ -37,14 +37,21 @@ public class User {
         return this.alerts;
     }
 
+    /**
+     *
+     * @param topic
+     * 3. Los usuarios pueden optar sobre cuales temas quieren recibir alertas.
+     */
     public void addTopic(Topic topic){
         this.topics.add(topic);
     }
 
     public void addAlert(Alert alert){
-        alert.setReceivedAt(LocalDateTime.now());
 
-        if(this.getTopics().contains(alert.getTopic())){this.alerts.add(alert);}
+        if(this.getTopics().contains(alert.getTopic())){
+            alert.setReceivedAt(LocalDateTime.now());
+            this.alerts.add(alert);
+        }
 
     }
 
@@ -61,26 +68,41 @@ public class User {
     /**
      *
      * @param alert
+     * 8. Un usuario puede marcar una alerta como leída.
      * Metodo para marcar Alerta como leída.
      * La Alerta debe ser obtenida del propio Usuario (lista de alertas)
+     *
      */
     public void markAlertAsRead(Alert alert){
             alert.markAsRead();
     }
 
+
+    /**
+     *
+     * @return List<Alert>
+     * 9. Se pueden obtener todas las alertas no expiradas de un usuario que aún no ha leído.
+     */
+
     public List<Alert> getUnexpired_And_UnreadAlerts(){
-        List<Alert> unexpiredAndUnreadAlerts = new ArrayList<Alert>();
+        List<Alert> unexpired_And_UnreadAlerts = new ArrayList<Alert>();
         for (Alert alert: this.alerts ) {
             if(!alert.isExpired() && !alert.isRead() &&  (alert.getType().equals( AlertType.URGENT))){
-                unexpiredAndUnreadAlerts.add(0,alert);
+                unexpired_And_UnreadAlerts.add(0,alert);
             }else if(!alert.isExpired() && !alert.isRead() &&  (alert.getType().equals( AlertType.INFORMATIVE))){
-                unexpiredAndUnreadAlerts.add(alert);
+                unexpired_And_UnreadAlerts.add(alert);
             }
         }
 
-        return unexpiredAndUnreadAlerts;
+        return unexpired_And_UnreadAlerts;
     }
 
+    /**
+     *
+     * @param topicDescription
+     * @return List<Alert>
+     * 10. Se pueden obtener todas las alertas no expiradas para un tema.
+     */
     public List<Alert> getUnexpiredAlert_ByTopic(String topicDescription){
         List<Alert> unexpiredAlertByTopic = new ArrayList<Alert>();
 

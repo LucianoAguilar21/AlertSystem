@@ -15,16 +15,16 @@ import java.time.format.DateTimeFormatter;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AlertTest {
-    private UserService userService;
+
     private AlertSystem alertSystem;
     private TopicService topicService;
-    private AlertService alertService;
+
     @BeforeEach
     public void setUp(){
-        userService = new UserService();
+
         alertSystem  = new AlertSystem();
         topicService = new TopicService();
-        alertService = new AlertService();
+
     }
 
     @Test

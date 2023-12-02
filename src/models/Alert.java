@@ -3,14 +3,16 @@ package models;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-/** Clase Alert para crear las alertas
- *
- */
+
 public class Alert implements Cloneable,Comparable<Alert> {
 
     private String description;
     private Topic topic;
     private boolean read;
+
+    /**
+     * 6. Una alerta puede tener una fecha y hora de expiración.
+     */
     private LocalDateTime expire;
     private AlertType type;
 

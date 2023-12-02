@@ -48,12 +48,9 @@ public class AlertServiceTest {
         LocalDateTime expire = LocalDateTime.parse("2023-12-08 12:00:00", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
         LocalDateTime expired = LocalDateTime.parse("2023-12-01 12:00:00", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 
-        Alert alert = new Alert("I1", alertSystem.getTopics().get(0),expire,AlertType.INFORMATIVE);
-        Alert alert_expired = new Alert("I2", alertSystem.getTopics().get(0),expired,AlertType.INFORMATIVE);
+
         Alert alert2 = new Alert("U1", alertSystem.getTopics().get(3),expire,AlertType.URGENT);
-        Alert alert3 = new Alert("I3", alertSystem.getTopics().get(2),expire,AlertType.INFORMATIVE);
-        Alert alert4 = new Alert("U2", alertSystem.getTopics().get(2),expire,AlertType.URGENT);
-        Alert alert5 = new Alert("I4", alertSystem.getTopics().get(2),expire,AlertType.INFORMATIVE);
+
 
         alertService.sendAlertByTopic(alert2, alertSystem.getUsers());
 
@@ -81,14 +78,12 @@ public class AlertServiceTest {
 
 
         LocalDateTime expire = LocalDateTime.parse("2023-12-08 12:00:00", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-        LocalDateTime expired = LocalDateTime.parse("2023-12-01 12:00:00", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 
         Alert alert = new Alert("I1", alertSystem.getTopics().get(0),expire,AlertType.INFORMATIVE);
-        Alert alert_expired = new Alert("I2", alertSystem.getTopics().get(0),expired,AlertType.INFORMATIVE);
+
         Alert alert2 = new Alert("U1", alertSystem.getTopics().get(3),expire,AlertType.URGENT);
         Alert alert3 = new Alert("I3", alertSystem.getTopics().get(2),expire,AlertType.INFORMATIVE);
-        Alert alert4 = new Alert("U2", alertSystem.getTopics().get(2),expire,AlertType.URGENT);
-        Alert alert5 = new Alert("I4", alertSystem.getTopics().get(2),expire,AlertType.INFORMATIVE);
+
 
         alertService.sendAlertToAllUsers(alert, alertSystem.getUsers());
         alertService.sendAlertToAllUsers(alert2, alertSystem.getUsers());
@@ -127,11 +122,7 @@ public class AlertServiceTest {
         LocalDateTime expired = LocalDateTime.parse("2023-12-01 12:00:00", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 
         Alert alert = new Alert("I1", alertSystem.getTopics().get(0),expire,AlertType.INFORMATIVE);
-        Alert alert_expired = new Alert("I2", alertSystem.getTopics().get(0),expired,AlertType.INFORMATIVE);
         Alert alert2 = new Alert("U1", alertSystem.getTopics().get(3),expire,AlertType.URGENT);
-        Alert alert3 = new Alert("I3", alertSystem.getTopics().get(2),expire,AlertType.INFORMATIVE);
-        Alert alert4 = new Alert("U2", alertSystem.getTopics().get(2),expire,AlertType.URGENT);
-        Alert alert5 = new Alert("I4", alertSystem.getTopics().get(2),expire,AlertType.INFORMATIVE);
 
         alertService.sendAlertToUser(alert,alertSystem.getUsers().get(0));
 

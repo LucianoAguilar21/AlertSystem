@@ -283,6 +283,50 @@ public class UserTest {
     }
 
     @Test
+    public void alertOrder(){
+        alertSystem.addUser(userService.registerNewUser(1,"user1"));
+
+        alertSystem.addTopic(topicService.registerNewTopic("topic1"));
+
+        alertSystem.getUsers().get(0).addTopic(alertSystem.getTopics().get(0));
+
+        LocalDateTime expire = LocalDateTime.parse("2023-12-08 12:00:00", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        LocalDateTime expired = LocalDateTime.parse("2023-12-01 12:00:00", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+
+        Alert alert = new Alert("I1", alertSystem.getTopics().get(0),expire,AlertType.INFORMATIVE);
+        Alert alert_expired = new Alert("I2", alertSystem.getTopics().get(0),expired,AlertType.INFORMATIVE);
+        Alert alert2 = new Alert("U1", alertSystem.getTopics().get(0),expire,AlertType.URGENT);
+        Alert alert3 = new Alert("I3", alertSystem.getTopics().get(0),expire,AlertType.INFORMATIVE);
+        Alert alert4 = new Alert("U2", alertSystem.getTopics().get(0),expire,AlertType.URGENT);
+        Alert alert5 = new Alert("I4", alertSystem.getTopics().get(0),expire,AlertType.INFORMATIVE);
+
+        alertService.sendAlertToUser(alert,alertSystem.getUsers().get(0));
+        alertService.sendAlertToUser(alert_expired,alertSystem.getUsers().get(0));
+        alertService.sendAlertToUser(alert2,alertSystem.getUsers().get(0));
+        alertService.sendAlertToUser(alert3,alertSystem.getUsers().get(0));
+        alertService.sendAlertToUser(alert4,alertSystem.getUsers().get(0));
+        alertService.sendAlertToUser(alert5,alertSystem.getUsers().get(0));
+
+        String expectedUnorderAlerts = "I1,I2,U1,I3,U2,I4,";
+        String unorderAlerts ="";
+        for (Alert a :alertSystem.getUsers().get(0).getAlerts()) {
+            unorderAlerts+= a.getDescription() + ",";
+        }
+
+        Assertions.assertEquals(expectedUnorderAlerts,unorderAlerts);
+
+        String expectedOrderAlerts = "U2,U1,I1,I3,I4,";
+        String orderAlerts ="";
+
+        for (Alert a :alertSystem.getUsers().get(0).getUnexpired_And_UnreadAlerts()) {
+            orderAlerts+= a.getDescription() + ",";
+        }
+
+        Assertions.assertEquals(expectedOrderAlerts,orderAlerts);
+
+    }
+
+    @Test
     public void getUnexpiredAlertByTopic(){
         alertSystem.addUser(userService.registerNewUser(1,"user1"));
 
